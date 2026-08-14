@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#17324d">
+  <title>로마서 성경퀴즈 120</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div>
+    <div class="eyebrow">CEN Bible Quiz</div>
+    <h1>로마서 성경퀴즈 120</h1>
+    <p>기존 100문항 + 빈칸형 20문항 · 추가문항 난이도 상 40% / 중 30% / 하 30%</p>
+  </div>
+</header>
+
+<main>
+<section class="stats">
+  <div><b>120</b><span>전체 문항</span></div>
+  <div><b>70</b><span>객관식</span></div>
+  <div><b>30</b><span>기존 주관식</span></div>
+  <div><b>20</b><span>추가 빈칸형</span></div>
+</section>
+
+<section class="panel controls">
+  <h2>출제 설정</h2>
+  <div class="grid">
+    <label>문제 유형
+      <select id="typeFilter">
+        <option value="전체">전체</option>
+        <option value="객관식">객관식</option>
+        <option value="주관식">주관식 전체</option>
+        <option value="빈칸형">빈칸형만</option>
+      </select>
+    </label>
+    <label>난이도
+      <select id="difficultyFilter">
+        <option value="전체">전체</option>
+        <option value="하">하</option>
+        <option value="중">중</option>
+        <option value="상">상</option>
+      </select>
+    </label>
+    <label>장
+      <select id="chapterFilter">
+        <option value="전체">전체</option>
+        <option value="1">1장</option><option value="2">2장</option><option value="3">3장</option><option value="4">4장</option><option value="5">5장</option><option value="6">6장</option><option value="7">7장</option><option value="8">8장</option><option value="9">9장</option><option value="10">10장</option><option value="11">11장</option><option value="12">12장</option><option value="13">13장</option><option value="14">14장</option><option value="15">15장</option><option value="16">16장</option>
+      </select>
+    </label>
+    <label>출제 문항 수
+      <input id="countInput" type="number" min="1" max="120" value="20">
+    </label>
+  </div>
+  <div class="checks">
+    <label><input id="randomize" type="checkbox" checked> 무작위 출제</label>
+    <label><input id="showRefDuring" type="checkbox"> 풀이 중 성경 장절 표시</label>
+  </div>
+  <div class="actions">
+    <button id="startBtn" class="primary">퀴즈 시작</button>
+    <button id="showAllBtn">150문항 보기</button>
+  </div>
+</section>
+
+<section class="panel downloads">
+  <h2>파일 다운로드</h2>
+  <p>브라우저에서 바로 문제지·정답지를 파일로 저장할 수 있습니다.</p>
+  <div class="actions wrap">
+    <button data-download="questions-txt">문제지 TXT</button>
+    <button data-download="answers-txt">정답지 TXT</button>
+    <button data-download="questions-csv">문제지 CSV</button>
+    <button data-download="answers-csv">정답지 CSV</button>
+    <button data-download="json">문제은행 JSON</button>
+  </div>
+</section>
+
+<section id="quizPanel" class="panel quiz hidden">
+  <div class="quizbar">
+    <span id="progressText"></span>
+    <span id="scoreText"></span>
+  </div>
+  <div class="progress"><i id="progressBar"></i></div>
+  <div id="questionCard"></div>
+  <div class="actions">
+    <button id="prevBtn">이전</button>
+    <button id="checkBtn" class="primary">정답 확인</button>
+    <button id="nextBtn">다음</button>
+  </div>
+</section>
+
+<section id="resultPanel" class="panel hidden"></section>
+
+<section id="bankPanel" class="panel hidden">
+  <div class="bankhead">
+    <h2>문제은행 150문항</h2>
+    <button id="hideAllBtn">닫기</button>
+  </div>
+  <div id="bankList"></div>
+</section>
+</main>
+
+<footer>
+  <p>※ 성경 장절 표기는 로마서 기준입니다. 서술형은 예시답안의 핵심 내용 중심으로 채점하세요.</p>
+  <p>오프라인 사용 가능 · 독립 PWA</p>
+</footer>
+
+<script src="questions.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
