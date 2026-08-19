@@ -94,7 +94,7 @@ document.querySelectorAll('[data-download]').forEach(btn=>btn.addEventListener('
   const kind=btn.dataset.download;
   if(kind==='questions-txt') download('로마서_성경퀴즈_150문항_문제지.txt',questionTxt());
   if(kind==='answers-txt') download('로마서_성경퀴즈_150문항_정답지.txt',answerTxt());
-  if(kind==='json') download('로마서_문제은행_120.json',JSON.stringify(QUESTION_BANK,null,2),'application/json;charset=utf-8');
+  if(kind==='json') download('로마서_문제은행_150.json',JSON.stringify(QUESTION_BANK,null,2),'application/json;charset=utf-8');
   if(kind.includes('csv')){
     const answersMode=kind==='answers-csv';
     const rows=[answersMode?['번호','유형','세부유형','난이도','장절','정답/예시답안','채점기준']:['번호','유형','세부유형','난이도','장절','문제','선택지']];
